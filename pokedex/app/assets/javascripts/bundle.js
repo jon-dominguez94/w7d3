@@ -338,10 +338,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./store/store */ "./frontend/store/store.js");
 /* harmony import */ var _components_root__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/root */ "./frontend/components/root.jsx");
+/* harmony import */ var _util_api_util__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./util/api_util */ "./frontend/util/api_util.js");
 
 
 
 
+
+window.fetchAllPokemon = _util_api_util__WEBPACK_IMPORTED_MODULE_4__["fetchAllPokemon"];
+window.fetchOnePokemon = _util_api_util__WEBPACK_IMPORTED_MODULE_4__["fetchOnePokemon"];
 document.addEventListener('DOMContentLoaded', function () {
   var store = Object(_store_store__WEBPACK_IMPORTED_MODULE_2__["default"])();
   var rootEl = document.getElementById('root');
@@ -468,16 +472,23 @@ var configureStore = function configureStore() {
 /*!***********************************!*\
   !*** ./frontend/util/api_util.js ***!
   \***********************************/
-/*! exports provided: fetchAllPokemon */
+/*! exports provided: fetchAllPokemon, fetchOnePokemon */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchAllPokemon", function() { return fetchAllPokemon; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchOnePokemon", function() { return fetchOnePokemon; });
 var fetchAllPokemon = function fetchAllPokemon() {
   return $.ajax({
     method: "GET",
     url: 'api/pokemon'
+  });
+};
+var fetchOnePokemon = function fetchOnePokemon(pokemon) {
+  return $.ajax({
+    method: "GET",
+    url: "api/pokemon/".concat(pokemon.id)
   });
 };
 
