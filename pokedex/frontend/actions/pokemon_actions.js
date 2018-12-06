@@ -13,8 +13,8 @@ export const requestAllPokemon = () => (dispatch) => (
     .then(pokemon => dispatch(receiveAllPokemon(pokemon)))
 );
 
-export const receiveOnePokemon = (pokemon) => ({
+export const receiveOnePokemon = (pokeData) => ({
     type: RECEIVE_ONE_POKEMON,
-    pokemon
+    pokeData
   }
 );
