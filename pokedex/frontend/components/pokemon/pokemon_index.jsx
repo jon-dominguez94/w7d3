@@ -4,7 +4,7 @@ import PokemonIndexItem from './pokemon_index_item';
 class PokemonIndex extends React.Component {
 
   componentDidMount() {
-    this.props.getAllPokemon;
+    this.props.getAllPokemon();
   }
 
   render() {

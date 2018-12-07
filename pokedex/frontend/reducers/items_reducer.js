@@ -8,6 +8,7 @@ const itemsReducer = (state = {}, action) => {
       // get all items for this pokemon and add to state
       // console.log(action)
       return merge({}, state, action.pokeData.items);
+      // we merge so that prev state (item) is preserved
     default:
       return state;
   }

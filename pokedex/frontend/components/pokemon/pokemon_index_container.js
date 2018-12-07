@@ -8,10 +8,15 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-  return { getAllPokemon: dispatch(requestAllPokemon()) };
+  return { getAllPokemon: () => dispatch(requestAllPokemon()) };
 };
 
 export default connect(
     mapStateToProps,
     mapDispatchToProps
 )(PokemonIndex);
+
+// export default withRouter(connect(
+//     mapStateToProps,
+//     mapDispatchToProps
+// )(PokemonIndex));
